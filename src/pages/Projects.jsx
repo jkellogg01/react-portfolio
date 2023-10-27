@@ -28,6 +28,22 @@ export default function Projects() {
         Deployed: "https://dev-row-records-63d750921ea0.herokuapp.com/",
       },
     },
+    {
+      name: "Stopwatch",
+      description: "A nice-looking stopwatch",
+      links: {
+        Repository: "https://github.com/jkellogg01/stopwatch-project",
+        Deployed: "https://jkellogg01.github.io/stopwatch-project/",
+      },
+    },
+    {
+      name: "Blank One",
+      description: "This is an example project",
+    },
+    {
+      name: "Blank Two",
+      description: "This is also an example project",
+    },
   ]
 
   return (
