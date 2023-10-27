@@ -1,9 +1,14 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+import emailjs from "@emailjs/browser"
+import dotenv from "dotenv"
+dotenv.config({ path: "../../.env" })
 
 export default function Contact() {
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+
+  const form = useRef()
 
   function handleFieldChange(e) {
     const { name, value } = e.target
@@ -18,14 +23,27 @@ export default function Contact() {
     }
   }
 
-  function handleFormSubmit(e) {
+  async function handleFormSubmit(e) {
+    e.preventDefault();
 
+    try {
+      const data = emailjs.sendForm(
+        process.env.EJS_SERVICE,
+        process.env.EJS_TEMPLATE,
+        form.current,
+        process.env.EJS_PUBLIC_KEY
+      )
+      console.info(data);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
     <form
       className="bg-violet-900 p-8 rounded-2xl flex flex-col gap-2 min-h-[36rem]"
       onSubmit={handleFormSubmit}
+      ref={form}
     >
       <h3
         className="text-2xl font-bold"
@@ -64,6 +82,12 @@ export default function Contact() {
         name="message"
         placeholder="Message"
       />
+      <button 
+        type="submit"
+        className="bg-violet-400 hover:bg-violet-600 p-2 text-lg rounded-md w-full"
+      >
+        Submit
+      </button>
     </form>
   )
 }
