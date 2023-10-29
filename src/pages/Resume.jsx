@@ -1,7 +1,7 @@
 export default function Resume() {
   return (
-    <div className="bg-violet-900 rounded-3xl p-8 max-w-prose">
-      <div className="flex flex-col gap-4">
+    <div className="bg-violet-900 rounded-3xl p-4 max-w-prose text-xl flex flex-col gap-4">
+      <div className="flex flex-col gap-4 bg-violet-800 p-4 rounded-lg">
         <h3 className="text-3xl font-semibold">Joshua Kellogg</h3>
         <div className="flex flex-row gap-4">
           <a
@@ -29,6 +29,26 @@ export default function Resume() {
           >
             GitHub
           </a>
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 bg-violet-800 p-4 rounded-lg">
+        <h4 className="text-2xl font-semibold">Summary</h4>
+        <p>
+          Entry-level full-stack developer seeking opportunities for growth
+          within the field of back-end web development.
+        </p>
+        <p>Seeking remote or in-person roles; willing to relocate.</p>
+        <div>
+          Recognized by colleagues for:
+          <ul className="flex flex-row gap-2 py-2">
+            <li className="p-2 rounded-md bg-violet-600">
+              Effective communication
+            </li>
+            <li className="p-2 rounded-md bg-violet-600">
+              Attention to detail
+            </li>
+            <li className="p-2 rounded-md bg-violet-600">Positive outlook</li>
+          </ul>
         </div>
       </div>
     </div>
