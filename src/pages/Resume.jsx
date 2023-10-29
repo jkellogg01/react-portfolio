@@ -51,6 +51,64 @@ export default function Resume() {
           </ul>
         </div>
       </div>
+      <div className="flex flex-col gap-4 bg-violet-800 p-4 rounded-lg">
+        <h4>Technical Skills</h4>
+        <div>
+          Front-end
+          <ul className="flex flex-row flex-wrap items-center gap-2 pt-2">
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              HTML
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              CSS
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              JavaScript
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              AJAX
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Bootstrap
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              JQuery
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              React
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Tailwind
+            </li>
+          </ul>
+        </div>
+        <div>
+          Back-end
+          <ul className="flex flex-row flex-wrap items-center gap-2 pt-2">
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Node
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Express
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              SQL
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Sequelize
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Handlebars
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Java
+            </li>
+            <li className="p-2 rounded-md bg-violet-600 hover:bg-violet-400 hover:text-2xl transition-all">
+              Go
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
