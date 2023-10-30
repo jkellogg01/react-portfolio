@@ -7,9 +7,14 @@ export default function Projects() {
   const projects = [
     {
       name: "Sunny",
-      description: "Definitely the only CLI weather solution that's ever been made",
+      description:
+        "Definitely the only CLI weather solution that's ever been made",
       links: {
         Repository: "https://github.com/jkellogg01/sunny",
+      },
+      image: {
+        uri: "sunny.png",
+        alt: "A screenshot of the weather in london provided by sunny",
       },
     },
     {
@@ -19,6 +24,10 @@ export default function Projects() {
         Repository: "https://github.com/jkellogg01/menu-match",
         Deployed: "https://jkellogg01.github.io/menu-match/",
       },
+      image: {
+        uri: "menu-match.png",
+        alt: "A screenshot of the menu match landing page",
+      },
     },
     {
       name: "Dev Row Records",
@@ -27,6 +36,10 @@ export default function Projects() {
         Repository: "https://github.com/PRich57/dev-row-records",
         Deployed: "https://dev-row-records-63d750921ea0.herokuapp.com/",
       },
+      image: {
+        uri: "dev-row-records.png",
+        alt: "A screenshot of the dev row records landing page",
+      },
     },
     {
       name: "Stopwatch",
@@ -34,6 +47,10 @@ export default function Projects() {
       links: {
         Repository: "https://github.com/jkellogg01/stopwatch-project",
         Deployed: "https://jkellogg01.github.io/stopwatch-project/",
+      },
+      image: {
+        uri: "stopwatch.png",
+        alt: "A screenshot of the stopwatch app",
       },
     },
     {
@@ -50,32 +67,36 @@ export default function Projects() {
         Repository: "https://github.com/jkellogg01/social-media-api",
       },
     },
-  ]
+  ];
 
   return (
     <div className="grid grid-cols-1 2xl:grid-cols-2 gap-16">
-      {projects.map(({ name, description, links }, index) => (
+      {projects.map(({ name, description, links, image }, index) => (
         <ImageCard
           key={index}
           title={name}
+          imgPath={image ? image.uri : null}
+          imgAlt={image ? image.alt : null}
         >
           <div className="h-full flex flex-col items-left justify-between pb-4">
             <p>{description}</p>
-            {links && <div className="flex flex-row justify-end gap-4">
-              {Object.entries(links).map(([key, value], index) => (
-                <a
-                  key={index}
-                  href={value}
-                  target="_blank"
-                  className="py-2 px-4 bg-violet-600 hover:bg-violet-400 rounded-lg"
-                >
-                  {key}
-                </a>
-              ))}
-            </div>}
+            {links && (
+              <div className="flex flex-row justify-end gap-4">
+                {Object.entries(links).map(([key, value], index) => (
+                  <a
+                    key={index}
+                    href={value}
+                    target="_blank"
+                    className="py-2 px-4 bg-violet-600 hover:bg-violet-400 rounded-lg"
+                  >
+                    {key}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </ImageCard>
       ))}
     </div>
-  )
+  );
 }
