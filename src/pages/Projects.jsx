@@ -37,12 +37,18 @@ export default function Projects() {
       },
     },
     {
-      name: "Blank One",
-      description: "This is an example project",
+      name: "Employee Tracker API",
+      description: "An API layer for keeping track of employees in a company",
+      links: {
+        Repository: "https://github.com/jkellogg01/employee-tracker",
+      },
     },
     {
-      name: "Blank Two",
-      description: "This is also an example project",
+      name: "Social Media API",
+      description: "A functional RESTful back-end API for a social media site",
+      links: {
+        Repository: "https://github.com/jkellogg01/social-media-api",
+      },
     },
   ]
 
