@@ -34,6 +34,37 @@ export default function Resume() {
     ],
   };
 
+  const projects = [
+    {
+      name: "Menu Match",
+      links: {
+        Repository: "https://github.com/jkellogg01/menu-match",
+        Deployed: "https://jkellogg01.github.io/menu-match/",
+      },
+      role: [
+        "API integration",
+        "Client-side rendering",
+        "Dynamic content Population",
+        "Data Storage",
+      ],
+      description:
+        "Menu match is a front-end web application which makes use of third-party APIs to aggregate data that would serve as useful to those looking to entertain at home.",
+    },
+    {
+      name: "Dev Row Records",
+      links: {
+        Repository: "https://github.com/PRich57/dev-row-records",
+        Deployed: "https://dev-row-records-63d750921ea0.herokuapp.com/",
+      },
+      role: [
+        "Management of RESTful back-end API routing",
+        "Database integration and manipulation",
+      ],
+      description:
+        "Dev Row Records is a fictional record label invented for the purpose of demonstrating the functionality of a full-stack application, including a RESTful back-end API, the use of the Sequelize ORM to interface with a relational database system, and the use of handlebars templating in order to serve dynamic content to users.",
+    },
+  ];
+
   return (
     <div className="bg-violet-900 rounded-3xl p-4 max-w-prose text-xl flex flex-col gap-4">
       <ResumeSection>
@@ -113,7 +144,30 @@ export default function Resume() {
           </ul>
         </div>
       </ResumeSection>
-      <ResumeSection title="Projects">Children</ResumeSection>
+      <ResumeSection title="Projects">
+        {/* In a stunning variation on a theme, I have a very legitimately cool idea for how to implement this but I just want to be done with this assignment more than anything else */}
+        {projects.map((project, index) => (
+          <div className="bg-violet-600 p-4 rounded-xl" key={index}>
+            <div className="flex flex-row gap-4">
+              <div>{project.name}</div>
+              {Object.entries(project.links).map(([key, value], index) => (
+                <a key={index} href={value} className="text-blue-400">
+                  {key}
+                </a>
+              ))}
+            </div>
+            <div>
+              Responsibilities:
+              <ul>
+                {project.role.map((resp, index) => (
+                  <li key={index}>{resp}</li>
+                ))}
+              </ul>
+            </div>
+            <div>Description: {project.description}</div>
+          </div>
+        ))}
+      </ResumeSection>
     </div>
   );
 }
