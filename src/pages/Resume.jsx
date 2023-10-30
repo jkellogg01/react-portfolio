@@ -1,3 +1,5 @@
+import { ResumeSection } from "../components/ResumeSection";
+
 export default function Resume() {
   const technicalSkills = {
     frontend: [
@@ -25,10 +27,9 @@ export default function Resume() {
     ],
   };
 
-  // TODO: If I wasn't sick to death of not being done with this I would make an element fo contain these sections, and I still might before I'm done.
   return (
     <div className="bg-violet-900 rounded-3xl p-4 max-w-prose text-xl flex flex-col gap-4">
-      <div className="flex flex-col gap-4 bg-violet-800 p-4 rounded-lg">
+      <ResumeSection>
         <h3 className="text-3xl font-semibold">Joshua Kellogg</h3>
         <div className="flex flex-row gap-4">
           <a
@@ -57,9 +58,8 @@ export default function Resume() {
             GitHub
           </a>
         </div>
-      </div>
-      <div className="flex flex-col gap-4 bg-violet-800 p-4 rounded-lg">
-        <h4 className="text-2xl font-semibold">Summary</h4>
+      </ResumeSection>
+      <ResumeSection title="Summary">
         <p>
           Entry-level full-stack developer seeking opportunities for growth
           within the field of back-end web development.
@@ -77,9 +77,8 @@ export default function Resume() {
             <li className="p-2 rounded-md bg-violet-600">Positive outlook</li>
           </ul>
         </div>
-      </div>
-      <div className="flex flex-col gap-4 bg-violet-800 p-4 rounded-lg">
-        <h4 className="text-2xl font-semibold">Technical Skills</h4>
+      </ResumeSection>
+      <ResumeSection title="Technical Skills">
         <div>
           Front-end
           <ul className="flex flex-row flex-wrap items-center gap-2 pt-2">
@@ -106,7 +105,8 @@ export default function Resume() {
             ))}
           </ul>
         </div>
-      </div>
+      </ResumeSection>
+      <ResumeSection title="Projects">Children</ResumeSection>
     </div>
   );
 }
