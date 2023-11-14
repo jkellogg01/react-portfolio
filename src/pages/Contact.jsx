@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { sendForm } from "@emailjs/browser";
 
 export default function Contact() {
@@ -7,15 +7,13 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const form = useRef();
-
   function handleFieldChange(e) {
     const { name, value } = e.target;
     switch (name) {
-      case "firstName":
+      case "first-name":
         setFirstName(value);
         break;
-      case "lastName":
+      case "last-name":
         setLastName(value);
         break;
       case "email":
@@ -33,8 +31,8 @@ export default function Contact() {
     try {
       const result = await sendForm(
         "service_xf67cxh",
-        "template_zao32ll",
-        e.target,
+        "template_724c9sd",
+        "#contact-form",
         "BLXWK9ZkdcnOLC5RB"
       );
       console.info(result);
@@ -52,7 +50,7 @@ export default function Contact() {
     <form
       className="bg-violet-900 p-8 rounded-2xl flex flex-col gap-2"
       onSubmit={handleFormSubmit}
-      ref={form}
+      id="contact-form"
     >
       <h3 className="text-3xl font-bold">
         Hello
@@ -66,7 +64,7 @@ export default function Contact() {
       <div className="flex flex-row gap-2">
         <input
           className="bg-violet-600 placeholder-violet-400 p-2 rounded-lg text-lg"
-          name="firstName"
+          name="first-name"
           type="text"
           placeholder="First Name"
           onChange={handleFieldChange}
@@ -74,7 +72,7 @@ export default function Contact() {
         />
         <input
           className="bg-violet-600 placeholder-violet-400 p-2 rounded-lg text-lg"
-          name="lastName"
+          name="last-name"
           type="text"
           placeholder="Last Name"
           onChange={handleFieldChange}
@@ -92,6 +90,7 @@ export default function Contact() {
       <textarea
         className="bg-violet-600 placeholder-violet-400 p-2 rounded-lg text-lg"
         placeholder="Perhaps a nice message?"
+        name="message"
         onChange={handleFieldChange}
         value={message}
       />
